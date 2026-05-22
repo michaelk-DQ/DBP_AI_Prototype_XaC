@@ -1,0 +1,18 @@
+{
+  "name": "dbp-ai-prototype-xac",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DBP AI prototype — knowledge base seeding and tooling",
+  "scripts": {
+    "seed:kb": "ts-node --project tsconfig.scripts.json scripts/seedKnowledgeBase.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
