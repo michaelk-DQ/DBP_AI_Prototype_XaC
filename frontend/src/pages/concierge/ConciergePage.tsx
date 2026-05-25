@@ -1,28 +1,43 @@
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, useCallback, type FormEvent } from "react";
 import { Send } from "lucide-react";
 import { PageHeader } from "../../components/layout/PageHeader";
 import { ChatMessage } from "../../components/concierge/ChatMessage";
+import { FAQSuggestions } from "../../components/concierge/FAQSuggestions";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { Badge } from "../../components/ui/badge";
 import {
   getConciergeWelcome,
+  initConciergeSession,
   sendConciergeMessage,
   type ConciergeMessage,
 } from "../../services/ai/conciergeService";
-import { getAuthRecommendationContext } from "../../store/authStore";
+import {
+  getAuthRecommendationContext,
+  useIsAuthenticated,
+  useProfileId,
+} from "../../store/authStore";
 
 export function ConciergePage() {
+  const isAuthenticated = useIsAuthenticated();
+  const profileId = useProfileId();
+
   const [messages, setMessages] = useState<ConciergeMessage[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [retrievedCount, setRetrievedCount] = useState(0);
+  const [hasUserMessage, setHasUserMessage] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
 
+  // Re-bootstrap whenever auth state or active profile changes
   useEffect(() => {
     const context = getAuthRecommendationContext();
+    initConciergeSession(context.isAuthenticated);
     setMessages([getConciergeWelcome(context)]);
-  }, []);
+    setHasUserMessage(false);
+    setRetrievedCount(0);
+    setInput("");
+  }, [isAuthenticated, profileId]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -42,6 +57,7 @@ export function ConciergePage() {
     };
 
     setMessages((prev) => [...prev, userMsg]);
+    setHasUserMessage(true);
     setInput("");
     setLoading(true);
 
@@ -53,6 +69,31 @@ export function ConciergePage() {
       setLoading(false);
     }
   }
+
+  const handleSuggestionSelect = useCallback(async (question: string) => {
+    if (loading) return;
+
+    const context = getAuthRecommendationContext();
+    const userMsg: ConciergeMessage = {
+      id: crypto.randomUUID(),
+      role: "user",
+      content: question,
+      timestamp: Date.now(),
+    };
+
+    setMessages((prev) => [...prev, userMsg]);
+    setHasUserMessage(true);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const response = await sendConciergeMessage(question, context);
+      setRetrievedCount(response.retrievedCount);
+      setMessages((prev) => [...prev, response.message]);
+    } finally {
+      setLoading(false);
+    }
+  }, [loading]);
 
   return (
     <div className="flex h-[calc(100vh-8rem)] flex-col">
@@ -83,18 +124,23 @@ export function ConciergePage() {
 
         <form
           onSubmit={handleSend}
-          className="flex gap-2 border-t border-border bg-background p-4"
+          className="flex flex-col gap-0 border-t border-border bg-background"
         >
-          <Input
-            placeholder="Ask about services, funding, events, or courses…"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            disabled={loading}
-          />
-          <Button type="submit" disabled={loading || !input.trim()}>
-            <Send size={16} />
-            Send
-          </Button>
+          {!hasUserMessage && (
+            <FAQSuggestions onSelect={handleSuggestionSelect} count={4} />
+          )}
+          <div className="flex gap-2 p-4">
+            <Input
+              placeholder="Ask about services, funding, events, or courses…"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              disabled={loading}
+            />
+            <Button type="submit" disabled={loading || !input.trim()}>
+              <Send size={16} />
+              Send
+            </Button>
+          </div>
         </form>
       </div>
     </div>
