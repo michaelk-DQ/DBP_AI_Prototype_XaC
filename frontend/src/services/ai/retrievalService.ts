@@ -1,9 +1,14 @@
 import servicesJson from "../../data/services.json";
 import coursesJson from "../../data/courses.json";
 import eventsJson from "../../data/events.json";
+import faqsJson from "../../data/faqs.json";
 import type {
   CourseRecord,
   EventRecord,
+  FaqFilters,
+  FaqMatch,
+  FaqRecord,
+  GeneralKnowledgeResult,
   LearningFilters,
   ServiceFilters,
   ServiceRecord,
@@ -30,6 +35,7 @@ function asRecords<T>(data: unknown, label: string): T[] {
 const services = asRecords<ServiceRecord>(servicesJson, "services");
 const courses = asRecords<CourseRecord>(coursesJson, "courses");
 const events = asRecords<EventRecord>(eventsJson, "events");
+const faqs = asRecords<FaqRecord>(faqsJson, "faqs");
 
 function normalize(value: string): string {
   return value.toLowerCase().trim();
@@ -218,4 +224,143 @@ export function findBySlug(
   if (domain === "service") return services.find((s) => s.slug === slug);
   if (domain === "course") return courses.find((c) => c.slug === slug);
   return events.find((e) => e.slug === slug);
+}
+
+// ---------------------------------------------------------------------------
+// FAQ retrieval
+// ---------------------------------------------------------------------------
+
+export function getAllFaqs(): FaqRecord[] {
+  return faqs;
+}
+
+function scoreFaq(faq: FaqRecord, query: string): number {
+  const q = normalize(query);
+  const tokens = q.split(/\s+/).filter((t) => t.length > 2);
+  let score = 0;
+
+  const question = normalize(faq.question ?? "");
+  const answer = normalize(faq.answer ?? "");
+  const searchable = normalize(faq.searchable_content ?? "");
+  const tagText = asStringArray(faq.tags).map(normalize).join(" ");
+
+  // Exact question substring — highest signal
+  if (question.includes(q)) score += 10;
+
+  // Token-level matches across fields
+  for (const token of tokens) {
+    if (question.includes(token)) score += 4;
+    if (searchable.includes(token)) score += 3;
+    if (tagText.includes(token)) score += 2;
+    if (answer.includes(token)) score += 1;
+  }
+
+  return score;
+}
+
+function confidenceFromScore(score: number): "high" | "medium" | "low" {
+  if (score >= 10) return "high";
+  if (score >= 4) return "medium";
+  return "low";
+}
+
+export function searchFaqs(filters: FaqFilters = {}): FaqRecord[] {
+  return faqs.filter((faq) => {
+    if (filters.category && normalize(faq.category ?? "") !== normalize(filters.category)) {
+      return false;
+    }
+    if (!filters.query?.trim()) return true;
+
+    const haystack = [
+      faq.question ?? "",
+      faq.answer ?? "",
+      faq.searchable_content ?? "",
+      asStringArray(faq.tags).join(" "),
+    ].join(" ");
+
+    return matchesQuery(haystack, filters.query);
+  });
+}
+
+export function getBestFaqMatch(query: string): FaqMatch | null {
+  if (!query.trim()) return null;
+
+  const scored = faqs
+    .map((faq) => ({ faq, score: scoreFaq(faq, query) }))
+    .filter((r) => r.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  if (scored.length === 0) return null;
+
+  const best = scored[0];
+  return {
+    faq: best.faq,
+    score: best.score,
+    confidence: confidenceFromScore(best.score),
+  };
+}
+
+export function retrieveGeneralKnowledge(query: string): GeneralKnowledgeResult {
+  // 1. Try FAQ first
+  const faqMatch = getBestFaqMatch(query);
+
+  if (faqMatch && faqMatch.confidence !== "low") {
+    const related = searchFaqs({ query })
+      .filter((f) => f.question !== faqMatch.faq.question)
+      .slice(0, 3);
+
+    return {
+      answer: faqMatch.faq.answer,
+      source: "faq",
+      category: faqMatch.faq.category ?? "General",
+      confidence: faqMatch.confidence,
+      relatedFaqs: related,
+    };
+  }
+
+  // 2. Fallback: services
+  const serviceResults = searchServices({ query });
+  if (serviceResults.length > 0) {
+    const top = serviceResults[0];
+    return {
+      answer: top.service_description,
+      source: "services",
+      category: top.service_category ?? "Services",
+      confidence: "medium",
+      relatedFaqs: [],
+    };
+  }
+
+  // 3. Fallback: learning
+  const { courses: courseResults, events: eventResults } = searchLearning({ query });
+  if (courseResults.length > 0) {
+    const top = courseResults[0];
+    return {
+      answer: top.course_description,
+      source: "learning",
+      category: top.category_stream ?? "Learning",
+      confidence: "low",
+      relatedFaqs: [],
+    };
+  }
+  if (eventResults.length > 0) {
+    const top = eventResults[0];
+    return {
+      answer: top.event_description,
+      source: "learning",
+      category: top.capability ?? "Events",
+      confidence: "low",
+      relatedFaqs: [],
+    };
+  }
+
+  // 4. No match
+  return {
+    answer:
+      "I couldn't find a specific answer for that. Try browsing the Discover page or ask about services, funding, or training programs.",
+    source: "fallback",
+    category: "General",
+    confidence: "low",
+    relatedFaqs: [],
+  };
 }

@@ -1,0 +1,549 @@
+{
+  "records": [
+    {
+      "question": "What Is the Enterprise Journey Platform (eJP)?",
+      "answer": "The Enterprise Journey Platform (eJP) is a digital business growth platform developed by Khalifa Fund to help enterprises launch, grow, and scale through integrated funding, services, stakeholder collaboration, and AI-powered guidance. The platform supports businesses across six lifecycle stages and provides access to 12 interconnected digital marketplaces.",
+      "category": "Getting Started",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "enterprise growth",
+        "entrepreneurship",
+        "startup support",
+        "digital platform",
+        "funding",
+        "business lifecycle",
+        "AI guidance",
+        "Khalifa Fund"
+      ],
+      "searchable_content": "Enterprise Journey Platform eJP is a Khalifa Fund digital business platform that supports entrepreneurs, startups, SMEs, and enterprises with funding, AI-powered guidance, business services, and integrated marketplaces across all business lifecycle stages.",
+      "metadata": {
+        "faq_type": "platform_overview",
+        "audience": [
+          "entrepreneurs",
+          "startups",
+          "smes",
+          "enterprises"
+        ],
+        "domain": "Enterprise Journey Platform",
+        "service_category": "Business Growth"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Make an Enquiry on the Platform?",
+      "answer": "Users can make enquiries through the chatbot on the homepage or through the Make an Enquiry form in the navigation bar. The chatbot provides quick responses, while the enquiry form allows users to submit detailed messages with their name, email address, and enquiry details.",
+      "category": "Getting Started",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "support",
+        "chatbot",
+        "enquiry",
+        "platform assistance",
+        "customer support"
+      ],
+      "searchable_content": "Users can contact eJP support through the chatbot or the Make an Enquiry form to ask business, service, or platform-related questions and receive guidance or support.",
+      "metadata": {
+        "faq_type": "support",
+        "audience": [
+          "entrepreneurs",
+          "platform users"
+        ],
+        "domain": "Customer Support",
+        "service_category": "Enquiries"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Find the Right Service for My Business Needs?",
+      "answer": "Businesses can identify services based on their operational needs, business lifecycle stage, and required capabilities such as finance, strategy, compliance, or growth. eJP organizes services into digital marketplaces that provide tailored support across Ideation, Launch, Growth, Expansion, Optimisation, and Transformation stages.",
+      "category": "Getting Started",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "business services",
+        "SME ecosystem",
+        "marketplaces",
+        "growth support",
+        "consulting",
+        "strategy"
+      ],
+      "searchable_content": "eJP helps businesses discover funding, compliance, advisory, and operational services through lifecycle-based digital marketplaces tailored to enterprise growth needs.",
+      "metadata": {
+        "faq_type": "service_discovery",
+        "audience": [
+          "entrepreneurs",
+          "smes"
+        ],
+        "domain": "Business Services",
+        "service_category": "Service Discovery"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Register to Get Full Access to eJP?",
+      "answer": "Users can register by clicking Sign In or Start Your Growth Journey, completing the registration form, verifying their phone number using an OTP, and submitting their details. Once verified, users can access platform services and marketplaces.",
+      "category": "Getting Started",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "registration",
+        "account setup",
+        "OTP verification",
+        "platform onboarding",
+        "user access"
+      ],
+      "searchable_content": "Users can create an eJP account through the registration page, verify their phone number using OTP authentication, and gain access to enterprise services and digital marketplaces.",
+      "metadata": {
+        "faq_type": "account_registration",
+        "audience": [
+          "entrepreneurs",
+          "new users"
+        ],
+        "domain": "User Accounts",
+        "service_category": "Registration"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "What Are the Key Benefits of Using eJP for SMEs and Partners?",
+      "answer": "eJP provides SMEs with unified access to funding, compliance, advisory, community, training, and digital services through interconnected marketplaces. Service providers benefit from expanded market access, streamlined operations, ecosystem collaboration, and alignment with global standards.",
+      "category": "Getting Started",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "SME support",
+        "funding",
+        "community",
+        "innovation",
+        "business growth",
+        "training",
+        "digital solutions"
+      ],
+      "searchable_content": "eJP supports SMEs and partners with funding, compliance services, training, AI-driven support, digital marketplaces, networking opportunities, and ecosystem collaboration for sustainable growth.",
+      "metadata": {
+        "faq_type": "platform_benefits",
+        "audience": [
+          "entrepreneurs",
+          "service providers",
+          "smes"
+        ],
+        "domain": "Enterprise Growth",
+        "service_category": "Business Support"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "What Is the Difference Between an Enterprise Account and a Service Provider Account?",
+      "answer": "Enterprise accounts are designed for businesses seeking services, funding, and growth opportunities, while Service Provider accounts are for organizations offering solutions such as financial services, legal support, consulting, IT, and training. Enterprises consume services while providers deliver and manage them.",
+      "category": "Accounts & Access",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "enterprise accounts",
+        "service providers",
+        "roles",
+        "business ecosystem",
+        "marketplace"
+      ],
+      "searchable_content": "Enterprise accounts access funding and business services, while service provider accounts offer solutions such as consulting, legal services, finance, and training within the eJP ecosystem.",
+      "metadata": {
+        "faq_type": "account_roles",
+        "audience": [
+          "enterprises",
+          "service providers"
+        ],
+        "domain": "User Management",
+        "service_category": "Accounts"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Log In to My Account?",
+      "answer": "Users can log in by clicking Sign In, entering their registered email address and password, and submitting the login form. Users who forget their password can use the Forgot Password option to reset access.",
+      "category": "Accounts & Access",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "login",
+        "authentication",
+        "account access",
+        "user accounts"
+      ],
+      "searchable_content": "Users can sign in to eJP using their registered email address and password to access enterprise services, applications, and business tools.",
+      "metadata": {
+        "faq_type": "authentication",
+        "audience": [
+          "platform users"
+        ],
+        "domain": "User Accounts",
+        "service_category": "Login"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Reset My Password?",
+      "answer": "Users can reset their password by selecting Forgot Password on the login page, entering their registered email address, validating their account using an OTP, and creating a new password.",
+      "category": "Accounts & Access",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "password reset",
+        "OTP",
+        "account recovery",
+        "security"
+      ],
+      "searchable_content": "eJP users can recover account access by resetting their password through email verification and OTP authentication.",
+      "metadata": {
+        "faq_type": "account_security",
+        "audience": [
+          "platform users"
+        ],
+        "domain": "User Accounts",
+        "service_category": "Password Management"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Manage Access for Team Members?",
+      "answer": "Administrators can manage multi-user access through the Users & Roles section under Settings. Users can invite team members, assign predefined or custom roles, edit permissions, and manage user status.",
+      "category": "Accounts & Access",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "team management",
+        "roles",
+        "permissions",
+        "enterprise users",
+        "multi-user access"
+      ],
+      "searchable_content": "eJP allows enterprises to invite team members, assign roles such as Admin or Viewer, manage permissions, and control access through the Users & Roles module.",
+      "metadata": {
+        "faq_type": "user_management",
+        "audience": [
+          "enterprise admins",
+          "business owners"
+        ],
+        "domain": "Access Control",
+        "service_category": "Team Management"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Upload or Update My Business Documents?",
+      "answer": "Users can upload or update documents through the Documents section under Essentials. Documents can be uploaded by selecting a file or dragging and dropping it into the upload window before confirming submission.",
+      "category": "User Profiles & Settings",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "document upload",
+        "business documents",
+        "compliance",
+        "file management"
+      ],
+      "searchable_content": "Users can upload and manage business documents through the eJP Essentials section for compliance, service applications, and enterprise profile management.",
+      "metadata": {
+        "faq_type": "document_management",
+        "audience": [
+          "enterprises",
+          "smes"
+        ],
+        "domain": "Enterprise Profile",
+        "service_category": "Documents"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Manage Multiple Businesses Under One Account?",
+      "answer": "Users can switch between linked businesses through the business selection dropdown. The platform allows users to manage multiple enterprises, add new businesses, and access enterprise-specific details, applications, and documents.",
+      "category": "User Profiles & Settings",
+      "section": "Knowledge Base - Landing & General Use",
+      "area": "Help Center",
+      "tags": [
+        "multiple businesses",
+        "enterprise management",
+        "business accounts",
+        "profile management"
+      ],
+      "searchable_content": "eJP supports multi-business account management, allowing users to switch between enterprises, manage profiles, and oversee multiple business operations from one account.",
+      "metadata": {
+        "faq_type": "account_management",
+        "audience": [
+          "entrepreneurs",
+          "enterprise admins"
+        ],
+        "domain": "Enterprise Accounts",
+        "service_category": "Business Management"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Apply for a Service After Logging In?",
+      "answer": "Users can apply for services through the Explore navigation menu or the Services & Marketplaces section on the homepage. After selecting a service, users can review eligibility requirements, complete the application form, upload documents, and submit their request.",
+      "category": "Service Applications & Status",
+      "section": "Knowledge Base - Post Login Service Management",
+      "area": "Help Center",
+      "tags": [
+        "service applications",
+        "marketplaces",
+        "funding",
+        "business support",
+        "applications"
+      ],
+      "searchable_content": "eJP users can apply for funding, advisory, compliance, and business services through integrated marketplaces after logging into the platform.",
+      "metadata": {
+        "faq_type": "service_application",
+        "audience": [
+          "entrepreneurs",
+          "smes"
+        ],
+        "domain": "Service Management",
+        "service_category": "Applications"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Track the Status of My Applications?",
+      "answer": "Application statuses can be tracked through the Requests section under Transactions. Users can view statuses such as Draft, Under Review, Approved, and Rejected.",
+      "category": "Service Applications & Status",
+      "section": "Knowledge Base - Post Login Service Management",
+      "area": "Help Center",
+      "tags": [
+        "application tracking",
+        "requests",
+        "approval status",
+        "service management"
+      ],
+      "searchable_content": "Users can monitor the progress of service applications in eJP through the Requests dashboard and review statuses including approved, rejected, and under review.",
+      "metadata": {
+        "faq_type": "application_tracking",
+        "audience": [
+          "platform users"
+        ],
+        "domain": "Service Requests",
+        "service_category": "Tracking"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Manage Notifications in eJP?",
+      "answer": "Users can configure notifications through the Preferences & Notifications section under Settings. Available notifications include compliance alerts, submission deadlines, and partner messages.",
+      "category": "Service Applications & Status",
+      "section": "Knowledge Base - Post Login Service Management",
+      "area": "Help Center",
+      "tags": [
+        "notifications",
+        "alerts",
+        "compliance",
+        "submission reminders",
+        "messages"
+      ],
+      "searchable_content": "eJP notification settings allow users to receive alerts for compliance deadlines, partner messages, and application submissions.",
+      "metadata": {
+        "faq_type": "notifications",
+        "audience": [
+          "platform users"
+        ],
+        "domain": "User Preferences",
+        "service_category": "Notifications"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "How Do I Post a Business Opportunity in the Opportunities Marketplace?",
+      "answer": "Service providers and enterprises can create business opportunities by submitting opportunity details, selecting the appropriate opportunity stage, and sending the listing for review. Approved opportunities are published on the marketplace for potential partners and investors.",
+      "category": "Content Creation & Publishing (specific for partners)",
+      "section": "Knowledge Base - Post Login Service Management",
+      "area": "Help Center",
+      "tags": [
+        "business opportunities",
+        "marketplace",
+        "investors",
+        "partnerships",
+        "innovation"
+      ],
+      "searchable_content": "Users can publish business opportunities in the eJP marketplace to attract investors, collaborators, and strategic partners across different enterprise lifecycle stages.",
+      "metadata": {
+        "faq_type": "opportunity_management",
+        "audience": [
+          "service providers",
+          "entrepreneurs"
+        ],
+        "domain": "Marketplace Services",
+        "service_category": "Opportunities"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "What Browsers Are Supported by eJP?",
+      "answer": "The Enterprise Journey Platform supports modern web browsers including Google Chrome, Mozilla Firefox, Safari, and Microsoft Edge to ensure a responsive and seamless user experience.",
+      "category": "FAQs",
+      "section": "Knowledge Base - Cross-cutting Categories",
+      "area": "Help Center",
+      "tags": [
+        "browser support",
+        "technical support",
+        "platform access",
+        "compatibility"
+      ],
+      "searchable_content": "eJP is compatible with major modern browsers including Chrome, Firefox, Safari, and Edge for enterprise access and marketplace usage.",
+      "metadata": {
+        "faq_type": "technical_information",
+        "audience": [
+          "all users"
+        ],
+        "domain": "Platform Compatibility",
+        "service_category": "Technical Support"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "Does eJP Work on Mobile and Tablets?",
+      "answer": "Yes, the Enterprise Journey Platform is optimized for mobile phones and tablets, allowing users to access services, marketplaces, and business resources across devices.",
+      "category": "FAQs",
+      "section": "Knowledge Base - Cross-cutting Categories",
+      "area": "Help Center",
+      "tags": [
+        "mobile support",
+        "tablet support",
+        "responsive platform",
+        "digital access"
+      ],
+      "searchable_content": "eJP supports mobile and tablet access, enabling entrepreneurs and enterprises to use platform services and marketplaces on multiple devices.",
+      "metadata": {
+        "faq_type": "technical_information",
+        "audience": [
+          "all users"
+        ],
+        "domain": "Platform Accessibility",
+        "service_category": "Technical Support"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "Who Is Eligible to Use eJP?",
+      "answer": "Entrepreneurs, startups, SMEs, enterprises, service providers, and ecosystem partners are eligible to use eJP. The platform supports business growth, service delivery, collaboration, and access to funding opportunities.",
+      "category": "FAQs",
+      "section": "Knowledge Base - Cross-cutting Categories",
+      "area": "Help Center",
+      "tags": [
+        "eligibility",
+        "entrepreneurs",
+        "SMEs",
+        "service providers",
+        "startup support"
+      ],
+      "searchable_content": "eJP is available to entrepreneurs, startups, SMEs, enterprises, and service providers seeking funding, growth support, and business collaboration opportunities.",
+      "metadata": {
+        "faq_type": "eligibility",
+        "audience": [
+          "entrepreneurs",
+          "service providers",
+          "smes"
+        ],
+        "domain": "Platform Access",
+        "service_category": "Eligibility"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "Can I Apply for Multiple Services at the Same Time?",
+      "answer": "Yes, eJP allows businesses to apply for multiple services simultaneously across different marketplaces such as funding, legal support, compliance, and advisory services through a unified platform experience.",
+      "category": "FAQs",
+      "section": "Knowledge Base - Cross-cutting Categories",
+      "area": "Help Center",
+      "tags": [
+        "multiple applications",
+        "services",
+        "funding",
+        "compliance",
+        "marketplaces"
+      ],
+      "searchable_content": "Businesses can submit and manage multiple applications for funding, compliance, advisory, and support services through eJP’s integrated digital marketplaces.",
+      "metadata": {
+        "faq_type": "service_access",
+        "audience": [
+          "entrepreneurs",
+          "smes"
+        ],
+        "domain": "Service Applications",
+        "service_category": "Applications"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "Can Enterprises and Partners Communicate Directly on eJP?",
+      "answer": "Yes, eJP enables direct collaboration between enterprises and partners through matchmaking services, mentorship programs, investor connections, networking opportunities, and marketplace interactions.",
+      "category": "FAQs",
+      "section": "Knowledge Base - Cross-cutting Categories",
+      "area": "Help Center",
+      "tags": [
+        "partnerships",
+        "communication",
+        "networking",
+        "investors",
+        "community"
+      ],
+      "searchable_content": "eJP supports direct communication and collaboration between enterprises, investors, mentors, and service providers through digital marketplaces and partnership tools.",
+      "metadata": {
+        "faq_type": "ecosystem_collaboration",
+        "audience": [
+          "enterprises",
+          "partners",
+          "service providers"
+        ],
+        "domain": "Business Ecosystem",
+        "service_category": "Networking"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+      "question": "Who Do I Contact for Support If I Have More Questions?",
+      "answer": "Users can contact support through phone support, live chat, email support, or by submitting a support ticket through the Support section under Settings & Support. Users may also attach files and communicate directly with support agents.",
+      "category": "FAQs",
+      "section": "Knowledge Base - Cross-cutting Categories",
+      "area": "Help Center",
+      "tags": [
+        "support",
+        "help desk",
+        "live chat",
+        "technical assistance",
+        "customer service"
+      ],
+      "searchable_content": "eJP provides support through live chat, support tickets, email support, and phone assistance to help users resolve technical or service-related issues.",
+      "metadata": {
+        "faq_type": "support",
+        "audience": [
+          "all users"
+        ],
+        "domain": "Customer Support",
+        "service_category": "Help Desk"
+      },
+      "source": "KF FAQ Knowledge Base"
+    },
+    {
+        "question": "What services does Khalifa Fund provide?",
+        "answer": "Khalifa Fund provides funding, training, consulting, loan amendments, invoice financing, Smart Manufacturing incentives, stakeholder facilitation, and SME support services.",
+        "category": "services",
+        "tags": [
+            "funding",
+            "training",
+            "consulting",
+            "sme",
+            "financing",
+            "support"
+        ],
+        "searchable_content": "Khalifa Fund provides funding, consulting, training, stakeholder support, invoice financing, Smart Manufacturing incentives, and SME business support services.",
+        "metadata": {
+            "faq_type": "services",
+            "audience": [
+                "entrepreneurs",
+                "smes",
+                "startups"
+            ]
+        },
+        "source": "KF FAQ"
+    }
+  ]
+}

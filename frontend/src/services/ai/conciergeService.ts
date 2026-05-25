@@ -1,5 +1,6 @@
 import {
   retrieveForUser,
+  retrieveGeneralKnowledge,
   searchLearning,
   searchServices,
 } from "./retrievalService";
@@ -83,6 +84,15 @@ function routeMockResponse(
 ): string {
   const q = prompt.toLowerCase();
 
+  // FAQ / general knowledge — runs first, highest priority
+  const knowledge = retrieveGeneralKnowledge(prompt);
+  if (knowledge.source === "faq" && knowledge.confidence !== "low") {
+    const related = knowledge.relatedFaqs.length
+      ? `\n\nRelated topics: ${knowledge.relatedFaqs.map((f) => `• ${f.question}`).join("\n")}`
+      : "";
+    return `${knowledge.answer}${related}`;
+  }
+
   if (q.includes("service") || q.includes("support") || q.includes("program")) {
     return buildServiceAnswer(context);
   }
@@ -117,6 +127,11 @@ function routeMockResponse(
 
   if (q.includes("hello") || q.includes("hi") || q.includes("help")) {
     return buildPersonalizedGreeting(context);
+  }
+
+  // Low-confidence FAQ fallback — still surface it
+  if (knowledge.source !== "fallback") {
+    return knowledge.answer;
   }
 
   return (

@@ -1,4 +1,4 @@
-export type KnowledgeDomain = "service" | "course" | "event";
+export type KnowledgeDomain = "service" | "course" | "event" | "faq";
 
 export interface ServiceRecord {
   service_name: string;
@@ -64,4 +64,35 @@ export interface LearningFilters {
   query?: string;
   businessStage?: string;
   capability?: string;
+}
+
+export interface FaqRecord {
+  question: string;
+  answer: string;
+  category?: string;
+  section?: string;
+  area?: string;
+  tags?: string[];
+  searchable_content?: string;
+  metadata?: Record<string, unknown>;
+  source?: string;
+}
+
+export interface FaqFilters {
+  query?: string;
+  category?: string;
+}
+
+export interface FaqMatch {
+  faq: FaqRecord;
+  score: number;
+  confidence: "high" | "medium" | "low";
+}
+
+export interface GeneralKnowledgeResult {
+  answer: string;
+  source: "faq" | "services" | "learning" | "fallback";
+  category: string;
+  confidence: "high" | "medium" | "low";
+  relatedFaqs: FaqRecord[];
 }

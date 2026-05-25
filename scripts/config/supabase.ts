@@ -134,10 +134,12 @@ export const DATA_PATHS = {
   services: path.resolve(process.cwd(), "frontend", "src", "data", "services.json"),
   courses: path.resolve(process.cwd(), "frontend", "src", "data", "courses.json"),
   events: path.resolve(process.cwd(), "frontend", "src", "data", "events.json"),
+  faqs: path.resolve(process.cwd(), "frontend", "src", "data", "faqs.json"),
 } as const;
 
 export const TABLE_NAMES = {
   services: "kb_services",
   courses: "kb_courses",
   events: "kb_events",
+  faqs: "kb_faqs",
 } as const;

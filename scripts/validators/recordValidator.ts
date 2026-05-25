@@ -16,6 +16,12 @@ export interface EventRecord {
   [key: string]: unknown;
 }
 
+export interface FaqRecord {
+  question: string;
+  answer: string;
+  [key: string]: unknown;
+}
+
 export interface ValidationResult<T> {
   valid: boolean;
   record: T | null;
@@ -101,4 +107,27 @@ export function validateEventRecord(record: unknown): ValidationResult<EventReco
   }
 
   return { valid: true, record: row as EventRecord, errors: [] };
+}
+
+export function validateFaqRecord(record: unknown): ValidationResult<FaqRecord> {
+  if (typeof record !== "object" || record === null) {
+    return { valid: false, record: null, errors: ["faq: record must be a non-null object"] };
+  }
+
+  const row = record as Record<string, unknown>;
+  const errors: string[] = [];
+
+  if (typeof row.question !== "string" || row.question.trim().length === 0) {
+    errors.push("faq: question is required");
+  }
+
+  if (typeof row.answer !== "string" || row.answer.trim().length === 0) {
+    errors.push("faq: answer is required");
+  }
+
+  if (errors.length > 0) {
+    return { valid: false, record: null, errors };
+  }
+
+  return { valid: true, record: row as FaqRecord, errors: [] };
 }
